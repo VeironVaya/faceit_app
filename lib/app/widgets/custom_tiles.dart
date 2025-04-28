@@ -21,7 +21,7 @@ class CustomTiles extends StatelessWidget {
               color: const Color.fromARGB(103, 158, 158, 158),
               offset: Offset(0, 10),
               blurRadius: 20,
-              spreadRadius: 3)
+              spreadRadius: -15)
         ],
       ),
       child: Padding(

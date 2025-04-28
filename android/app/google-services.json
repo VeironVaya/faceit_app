@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "933192097589",
+    "project_id": "appfaceit-5d80c",
+    "storage_bucket": "appfaceit-5d80c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933192097589:android:1ea63051b88e96d90bf67c",
+        "android_client_info": {
+          "package_name": "vei.face_it_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDGU-PK5TSGRpGgQgvgrhFhabM_7Aj_2E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
