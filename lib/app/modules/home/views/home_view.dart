@@ -1,3 +1,4 @@
+import 'package:face_it_app/app/routes/app_pages.dart';
 import 'package:face_it_app/app/widgets/custom_botNavBar.dart';
 import 'package:face_it_app/app/widgets/custom_tiles.dart';
 import 'package:face_it_app/app/widgets/home_appbar.dart';
@@ -20,7 +21,7 @@ class HomeView extends GetView<HomeController> {
             children: [
               HomeAppbar(
                 name: "Chelsea",
-                onPress: () {},
+                onPress: () => Get.toNamed(Routes.PROFILE),
                 profilePict: "profilePictDummy.png",
                 skinType: "Combination",
               ),

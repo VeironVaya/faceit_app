@@ -1,5 +1,8 @@
 import 'package:face_it_app/app/widgets/custom_app_bar.dart';
+import 'package:face_it_app/app/widgets/custom_botNavBar.dart';
 import 'package:face_it_app/app/widgets/custom_editable_text.dart';
+import 'package:face_it_app/app/widgets/custom_logout_button.dart';
+import 'package:face_it_app/app/widgets/custom_radio.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -8,19 +11,20 @@ import 'package:google_fonts/google_fonts.dart';
 import '../controllers/profile_controller.dart';
 
 class ProfileView extends GetView<ProfileController> {
-  const ProfileView({super.key});
+  ProfileView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF8F3FB),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CustomAppBar(title: "PROFILE"),
-          SizedBox(height: 55),
+          SizedBox(height: 28),
           SizedBox(
-            height: 240,
-            width: 240,
+            height: 220,
+            width: 220,
             child: Stack(
               children: [
                 ClipOval(
@@ -80,12 +84,41 @@ class ProfileView extends GetView<ProfileController> {
                         decorationThickness: 2.0,
                         decorationColor: Color(0xFF3B6666)),
                   ),
-                )
+                ),
+                SizedBox(height: 10),
+                Container(
+                  height: 117,
+                  width: 185,
+                  child: Obx(() => Column(
+                        children: [
+                          CustomRadioWidget(
+                            text: "Pregnant",
+                            isSelected: controller.selected.value == "Pregnant",
+                            onTap: () => controller.selected("Pregnant"),
+                          ),
+                          CustomRadioWidget(
+                            text: "Nursing",
+                            isSelected: controller.selected.value == "Nursing",
+                            onTap: () => controller.selected("Nursing"),
+                          ),
+                          CustomRadioWidget(
+                            text: "None",
+                            isSelected: controller.selected.value == "None",
+                            onTap: () => controller.selected("None"),
+                          ),
+                        ],
+                      )),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
               ],
             ),
           ),
+          CustomLogoutButton(text: "Logout", onPress: () {}),
         ],
       ),
+      bottomNavigationBar: CustomBotnavbar(),
     );
   }
 }

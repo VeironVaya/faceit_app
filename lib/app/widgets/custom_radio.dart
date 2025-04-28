@@ -1,30 +1,42 @@
 import 'package:flutter/material.dart';
 
-class CustomRadio extends StatelessWidget {
-  var int val;
-  const CustomRadio({super.key,required this.value});
+class CustomRadioWidget extends StatelessWidget {
+  final String text;
+  final bool isSelected;
+  final VoidCallback onTap;
+  const CustomRadioWidget(
+      {super.key,
+      required this.text,
+      required this.isSelected,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-                children: [
-                  Radio<int>(
-                    value: 1,
-                    groupValue: val,
-                    onChanged: (int? value) {
-                      val = value!;
-                    },
-                  ),
-                  Text("Option 1"),
-                  Radio<int>(
-                    value: 2,
-                    groupValue: val,
-                    onChanged: (int? value) {
-                      val = value!;
-                    },
-                  ),
-                  Text("Option 2"),
-                ],
-              );
+    return InkWell(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Row(
+          children: [
+            Container(
+              width: 20,
+              height: 20,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: isSelected ? Color(0xFF3B6666) : Colors.grey[300],
+              ),
+            ),
+            SizedBox(width: 12),
+            Text(
+              text,
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

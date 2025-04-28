@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ProfileController extends GetxController {
-  //TODO: Implement ProfileController
+  var selected = "None".obs;
+
+  void select(String value) {
+    selected.value = value;
+  }
 
   @override
   void onInit() {
